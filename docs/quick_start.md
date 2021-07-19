@@ -4,7 +4,7 @@
 
 > 1.1、启动容器：
 >
-> docker run -d -p 8880:80 -p 9999:9999 registry.cn-hangzhou.aliyuncs.com/kevin_yang/ops_system:0.6
+> docker run -d -p 8880:80 -p 9999:9999 registry.cn-hangzhou.aliyuncs.com/kevin_yang/ops_system:1.0.0
 >
 > 1.2、Host 设置
 >
