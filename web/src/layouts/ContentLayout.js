@@ -25,6 +25,7 @@ import InstanceManageContent from "../components/dms/instance_manage";
 import AuthManageContent from "../components/dms/auth_manage";
 import DataManageContent from "../components/dms/data_manage";
 import DomainManageContent from "../components/dns/domain_manage";
+import NacosContent from "../components/nacos/nacos_content";
 import {getUserPermissionsList} from "../api/permission";
 
 const { Content } = Layout;
@@ -192,6 +193,10 @@ class ContentLayout extends Component {
                     <Route
                         path="/admin/k8s_cluster"
                         render={() => <KubernetesContent aclAuthMap={this.state.actionPermissionMap}/>}
+                    />
+                    <Route
+                        path="/admin/config_center/nacos"
+                        render={() => <NacosContent aclAuthMap={this.state.actionPermissionMap}/>}
                     />
                     <Route
                         path="/admin/data/syncAliyun"

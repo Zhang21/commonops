@@ -13,6 +13,7 @@ import (
 	"github.com/chujieyang/commonops/ops/presentation/kv"
 	"github.com/chujieyang/commonops/ops/presentation/middleware"
 	"github.com/chujieyang/commonops/ops/presentation/monitor"
+	"github.com/chujieyang/commonops/ops/presentation/nacos"
 	"github.com/chujieyang/commonops/ops/presentation/other"
 	"github.com/chujieyang/commonops/ops/presentation/rds"
 	"github.com/chujieyang/commonops/ops/presentation/slb"
@@ -120,6 +121,18 @@ func RegisterRouter(engine *gin.Engine) {
 		dataRoute.GET("/syncAliyunKv", data.IGetAliyunKvSync)
 		dataRoute.GET("/syncAliyunSlb", data.IGetAliyunSlbSync)
 		dataRoute.GET("/syncAliyunStatisData", data.IGetAliyunStatisData)
+	}
+
+	configCenterRoute := engine.Group("/configCenter", middleware.AuthMiddleWare())
+	{
+		configCenterRoute.POST("/nacos", nacos.IPostNacos)
+		configCenterRoute.GET("/nacos/list", nacos.IGetNacosList)
+		configCenterRoute.GET("/nacos/namespaces", nacos.IGetNacosNamespaceList)
+		configCenterRoute.GET("/nacos/configs", nacos.IGetNacosConfigList)
+		configCenterRoute.POST("/nacos/config", nacos.IPostNacosConfig)
+		configCenterRoute.PUT("/nacos/config", nacos.IPutNacosConfig)
+		configCenterRoute.DELETE("/nacos/config", nacos.IDeleteNacosConfig)
+		configCenterRoute.POST("/nacos/config/copy", nacos.IPostNacosConfigCopy)
 	}
 
 	k8sRoute := engine.Group("/kubernetes", middleware.AuthMiddleWare(), middleware.KubernetesMiddleWare())

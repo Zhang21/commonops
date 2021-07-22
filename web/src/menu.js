@@ -59,6 +59,11 @@ const sideMenus = [
         subMenus: [{ title: "集群管理", route: "/admin/k8s_cluster/info" }],
     },
     {
+        menuTitle: "配置管理",
+        icon: "PartitionOutlined",
+        subMenus: [{ title: "Nacos管理", route: "/admin/config_center/nacos" }],
+    },
+    {
         menuTitle: "数据管理",
         icon: "DatabaseOutlined",
         subMenus: [{ title: "阿里云", route: "/admin/data/syncAliyun" }],

@@ -496,7 +496,16 @@ VALUES
 	(115,'获取 K8S Node监控','获取 K8S Node监控','GET:/kubernetes/metrics/node',0,'操作'),
 	(116,'获取 K8S Pod监控','获取 K8S Pod监控','GET:/kubernetes/metrics/pod',0,'操作'),
 	(117,'WebSSH:K8S-Pod','WebSSH:K8S-Pod','WebSSH:K8S-Pod',0,'操作'),
-	(118,'获取用户反馈列表','获取用户反馈列表','GET:/user/feedback',0,'操作');
+	(118,'获取用户反馈列表','获取用户反馈列表','GET:/user/feedback',0,'操作')
+	(119,'配置中心Nacos菜单','配置中心Nacos菜单','/admin/config_center/nacos',0,'菜单'),
+	(120,'获取Nacos集群列表','获取Nacos集群列表','GET:/configCenter/nacos/list',0,'操作'),
+	(121,'新增Nacos集群','新增Nacos集群','POST:/configCenter/nacos',0,'操作'),
+	(122,'获取Nacos命名空间列表','获取Nacos命名空间列表','GET:/configCenter/nacos/namespaces',0,'操作'),
+	(123,'获取Nacos命名空间下的配置','获取Nacos命名空间下的配置','GET:/configCenter/nacos/configs',0,'操作'),
+	(124,'创建Nacos配置','创建Nacos配置','POST:/configCenter/nacos/config',0,'操作'),
+	(125,'修改Nacos配置','修改Nacos配置','PUT:/configCenter/nacos/config',0,'操作'),
+	(126,'删除Nacos配置','删除Nacos配置','DELETE:/configCenter/nacos/config',0,'操作'),
+	(127,'复制Nacos配置','复制Nacos配置','POST:/configCenter/nacos/config/copy',0,'操作');
 
 /*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -683,7 +692,16 @@ VALUES
 	(292,1,115),
 	(293,1,116),
 	(294,1,117),
-	(295,1,118);
+	(295,1,118),
+	(296,1,119),
+	(297,1,120),
+	(298,1,121),
+	(299,1,122),
+	(300,1,123),
+	(301,1,124),
+	(302,1,125),
+	(303,1,126),
+	(304,1,127);
 
 /*!40000 ALTER TABLE `role_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -926,3 +944,20 @@ CREATE TABLE `cd_process_template` (
   PRIMARY KEY (`id`),
   KEY `idx_cd_process_template_deleted_at` (`deleted_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+# Dump of table nacos
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `nacos`;
+
+CREATE TABLE `nacos` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `data_status` int(11) NOT NULL DEFAULT '1',
+  `end_point` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `alias` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
