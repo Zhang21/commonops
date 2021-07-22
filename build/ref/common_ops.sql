@@ -496,7 +496,7 @@ VALUES
 	(115,'获取 K8S Node监控','获取 K8S Node监控','GET:/kubernetes/metrics/node',0,'操作'),
 	(116,'获取 K8S Pod监控','获取 K8S Pod监控','GET:/kubernetes/metrics/pod',0,'操作'),
 	(117,'WebSSH:K8S-Pod','WebSSH:K8S-Pod','WebSSH:K8S-Pod',0,'操作'),
-	(118,'获取用户反馈列表','获取用户反馈列表','GET:/user/feedback',0,'操作')
+	(118,'获取用户反馈列表','获取用户反馈列表','GET:/user/feedback',0,'操作'),
 	(119,'配置中心Nacos菜单','配置中心Nacos菜单','/admin/config_center/nacos',0,'菜单'),
 	(120,'获取Nacos集群列表','获取Nacos集群列表','GET:/configCenter/nacos/list',0,'操作'),
 	(121,'新增Nacos集群','新增Nacos集群','POST:/configCenter/nacos',0,'操作'),

@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := display
 
-ImageVersion = 1.0.0
+ImageVersion = 1.0.1
 ImageName = registry.cn-hangzhou.aliyuncs.com/kevin_yang/ops_system
 
 .PHONY = display

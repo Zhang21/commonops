@@ -13,6 +13,7 @@
 -   通过 Web SSH 的方式安全便捷访问 Kubernetes 容器
 -   工单模块帮助团队协作
 -   基于 RBAC 的权限系统可细分控制团队成员角色的权限，粒度可细化到某个按钮的操作权限
+-   接入 Nacos 进行应用服务的配置管理
 
 #### 体验方式
 
@@ -21,7 +22,7 @@
 ```
 启动方式
 
-docker run -d -p 8880:80 -p 9999:9999 registry.cn-hangzhou.aliyuncs.com/kevin_yang/ops_system:1.0.0
+docker run -d -p 8880:80 -p 9999:9999 registry.cn-hangzhou.aliyuncs.com/kevin_yang/ops_system:1.0.1
 
 Host 设置
 设置访问侧 host 文件: commonops.com  --->  you server ip
